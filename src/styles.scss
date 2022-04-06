@@ -37,6 +37,7 @@ button {
   font-size: larger;
   padding: .5rem;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 @media screen and (min-height: 700px) {
@@ -44,7 +45,6 @@ button {
     align-items: center;
     justify-content: center;
   }
-
 }
 
 @media screen and (min-width: 480px){
