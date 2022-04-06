@@ -1,5 +1,7 @@
+import { NetlifyformsService } from '../netlify-forms/netlifyforms.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback',
@@ -7,7 +9,11 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./feedback.component.scss'],
 })
 export class FeedbackComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private netliFlyFormService: NetlifyformsService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -23,9 +29,21 @@ export class FeedbackComponent implements OnInit {
   erroMsg = '';
 
   closeError() {
-    this.erroMsg = ''
-    console.log('clicou')
+    this.erroMsg = '';
+    console.log('closed');
   }
 
-  onSubmit(){}
+  onSubmit() {
+    this.netliFlyFormService
+      .submitFeedbackEntry(this.feedbackForm.value)
+      .subscribe(
+        () => {
+          this.feedbackForm.reset();
+          this.router.navigateByUrl('/success');
+        },
+        (err) => {
+          this.erroMsg = err;
+        }
+      );
+  }
 }
