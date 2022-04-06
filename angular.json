@@ -34,7 +34,6 @@
                 "input": "src",
                 "output": "/"
               }
-
             ],
             "styles": [
               "src/styles.scss"
@@ -108,6 +107,14 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/feedback",
+            "netlifyToken": "",
+            "siteId": ""
           }
         }
       }
