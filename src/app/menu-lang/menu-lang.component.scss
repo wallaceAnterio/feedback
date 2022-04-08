@@ -1,0 +1,29 @@
+#menuLang {
+  cursor: pointer;
+}
+
+.bg {
+  cursor: pointer;
+  background-color: rgb(206, 214, 221);
+  color: rgb(87, 84, 84);
+  border-radius: 0.3rem;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  transform: translate3d(5px, 28px, 0px); /* distancia entre menu e btn */
+  top: 0px;
+  left: 0px;
+  will-change: transform;
+}
+.dropdown-menu {
+  cursor: pointer;
+  margin-left: -6px;
+}
+.dropdown {
+  display: inline-block; /* deixa o LO do "tamanho do próprio texto" e não da largura inteira da tela*/
+}
+.dropdown-toggle::after {
+  margin-left: 1.255em;
+}

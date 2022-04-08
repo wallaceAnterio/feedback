@@ -30,7 +30,8 @@ export class NetlifyformsService {
       .post('/', entry.toString(), {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         responseType: 'text',
-      }).pipe(catchError(this.handleError));
+      })
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(err: HttpErrorResponse) {

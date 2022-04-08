@@ -1,0 +1,26 @@
+<nav class="container mb-5 mt-1">
+  <div class="row">
+    <div class="col-9"></div>
+    <div class="col-1">
+      <div class="nav-item dropdown">
+        <p class="nav-link dropdown-toggle bg">
+          {{ lang }}
+        </p>
+        <div class="dropdown-menu" (click)="changeLang($event.target.value)">
+          <option value="pt" [selected]="lang == 'pt'" class="dropdown-item">
+            {{ "Português" | translate }}
+          </option>
+          <option value="en" [selected]="lang == 'en'" class="dropdown-item">
+            {{ "Inglês" | translate }}
+          </option>
+          <option value="es" [selected]="lang == 'sp'" class="dropdown-item">
+            {{ "Espanhol" | translate }}
+          </option>
+          <option value="fr" [selected]="lang == 'fr'" class="dropdown-item">
+            {{ "Francês" | translate }}
+          </option>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,11 +1,12 @@
 <div id="container">
+  <app-menu-lang></app-menu-lang>
   <div class="error" [class.hidden]="erroMsg.length == 0">
     <p>{{ erroMsg }}</p>
     <span (click)="closeError()" class="close">✖︎</span>
   </div>
-  <h1>Feedback Form</h1>
+  <h1>{{'Formulário de feedback' | translate}}</h1>
   <hr>
-  <p>We'd like your feedback to improve our website.</p>
+  <p>{{"Gostaríamos de seus comentários para melhorar nosso site." |translate}}</p>
 
   <form [formGroup]="feedbackForm" name="feedbackForm" (ngSubmit)="onSubmit()">
     <div id="options">
@@ -17,7 +18,7 @@
           name="type"
           value="suggestion"
         />
-        <label for="suggestion">Suggestion</label>
+        <label for="suggestion">{{"Sugestão"| translate}}</label>
       </p>
 
       <p class="radioOption">
@@ -28,7 +29,7 @@
           name="type"
           value="comment"
         />
-        <label for="comment">Comment</label>
+        <label for="comment">{{"Comentário"| translate}}</label>
       </p>
 
       <p class="radioOption">
@@ -39,50 +40,50 @@
           name="type"
           value="question"
         />
-        <label for="quetion">Question</label>
+        <label for="quetion">{{"Pergunta"| translate}}</label>
       </p>
     </div>
 
     <div class="inputContainer">
-      <label>Description</label>
+      <label>{{"Descrição"| translate}}</label>
       <textarea rows="6" formControlName="description"></textarea>
     </div>
 
     <div class="inputContainer">
       <div id="ratingLabel">
-        <label>How would you rate our site?</label>
+        <label>{{"Como você avaliaria o nosso site?"| translate}}</label>
         <label id="ratingValue">{{ feedbackForm.value?.rating }}</label>
       </div>
       <input id="rating" formControlName="rating" type="range" name="rating" max="5" />
     </div>
 
     <div class="inputContainer">
-      <label>Name:</label>
+      <label>{{"Nome:" |translate}}</label>
       <div class="nameInput">
         <input
           formControlName="firstName"
           type="text"
           name="firstName"
-          placeholder="First"
+          placeholder="{{'Primeiro' |translate}}"
         />
 
         <input
           formControlName="lastName"
           type="text"
           name="lastName"
-          placeholder="Last"
+          placeholder="{{'Último' |translate}}"
         />
       </div>
     </div>
 
     <div class="inputContainer">
-      <label>Email:</label>
+      <label>{{"Email:" | translate}}</label>
       <input formControlName="email" type="email" name="email" />
     </div>
 
     <div class="inputContainer">
       <button type="submit" [disabled]="feedbackForm.invalid">
-        Submit Feedback
+        {{'Enviar Feedback' | translate}}
       </button>
     </div>
   </form>
