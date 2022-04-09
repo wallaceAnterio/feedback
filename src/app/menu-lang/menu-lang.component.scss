@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
 #menuLang {
   cursor: pointer;
 }
@@ -20,10 +27,18 @@
 .dropdown-menu {
   cursor: pointer;
   margin-left: -6px;
+  margin-top: 10%;
 }
 .dropdown {
   display: inline-block; /* deixa o LO do "tamanho do próprio texto" e não da largura inteira da tela*/
 }
 .dropdown-toggle::after {
   margin-left: 1.255em;
+}
+
+@media screen and (max-width: 360px) {
+  .dropdown-menu {
+    margin-left: -84px;
+    margin-top: 10%;
+  }
 }

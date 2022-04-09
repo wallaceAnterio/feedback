@@ -1,90 +1,105 @@
 <div id="container">
-  <app-menu-lang></app-menu-lang>
+  <div class="menuLang">
+    <app-menu-lang></app-menu-lang>
+  </div>
   <div class="error" [class.hidden]="erroMsg.length == 0">
     <p>{{ erroMsg }}</p>
     <span (click)="closeError()" class="close">✖︎</span>
   </div>
-  <h1>{{'Formulário de feedback' | translate}}</h1>
-  <hr>
-  <p>{{"Gostaríamos de seus comentários para melhorar nosso site." |translate}}</p>
+  <h1 class="titleMain">{{ "Formulário de feedback" | translate }}</h1>
+
+  <span class="feedback">{{
+    "Gostaríamos de seus comentários para melhorar nosso site." | translate
+  }}</span>
 
   <form [formGroup]="feedbackForm" name="feedbackForm" (ngSubmit)="onSubmit()">
     <div id="options">
       <p class="radioOption">
         <input
+          class="cursorStyle"
           formControlName="type"
           type="radio"
           id="suggestion"
           name="type"
           value="suggestion"
         />
-        <label for="suggestion">{{"Sugestão"| translate}}</label>
+        <label for="suggestion">{{ "Sugestão" | translate }}</label>
       </p>
 
       <p class="radioOption">
         <input
+          class="cursorStyle"
           formControlName="type"
           type="radio"
           id="comment"
           name="type"
           value="comment"
         />
-        <label for="comment">{{"Comentário"| translate}}</label>
+        <label for="comment">{{ "Comentário" | translate }}</label>
       </p>
 
       <p class="radioOption">
         <input
+          class="cursorStyle"
           formControlName="type"
           type="radio"
           id="question"
           name="type"
           value="question"
         />
-        <label for="quetion">{{"Pergunta"| translate}}</label>
+        <label for="quetion">{{ "Pergunta" | translate }}</label>
       </p>
     </div>
 
     <div class="inputContainer">
-      <label>{{"Descrição"| translate}}</label>
+      <label class="description">{{ "Descrição" | translate }}</label>
       <textarea rows="6" formControlName="description"></textarea>
     </div>
 
     <div class="inputContainer">
       <div id="ratingLabel">
-        <label>{{"Como você avaliaria o nosso site?"| translate}}</label>
+        <label>{{ "Como você avaliaria o nosso site?" | translate }}</label>
         <label id="ratingValue">{{ feedbackForm.value?.rating }}</label>
       </div>
-      <input id="rating" formControlName="rating" type="range" name="rating" max="5" />
+      <input
+        class="cursorStyle"
+        id="rating"
+        formControlName="rating"
+        type="range"
+        name="rating"
+        max="5"
+      />
     </div>
 
     <div class="inputContainer">
-      <label>{{"Nome:" |translate}}</label>
+      <label>{{ "Nome:" | translate }}</label>
       <div class="nameInput">
         <input
           formControlName="firstName"
           type="text"
           name="firstName"
-          placeholder="{{'Primeiro' |translate}}"
+          placeholder="{{ 'Primeiro' | translate }}"
         />
 
         <input
           formControlName="lastName"
           type="text"
           name="lastName"
-          placeholder="{{'Último' |translate}}"
+          placeholder="{{ 'Último' | translate }}"
         />
       </div>
     </div>
 
     <div class="inputContainer">
-      <label>{{"Email:" | translate}}</label>
+      <label>{{ "Email:" | translate }}</label>
       <input formControlName="email" type="email" name="email" />
     </div>
 
     <div class="inputContainer">
       <button type="submit" [disabled]="feedbackForm.invalid">
-        {{'Enviar Feedback' | translate}}
+        {{ "Enviar Feedback" | translate }}
       </button>
     </div>
   </form>
+  <app-footer></app-footer>
 </div>

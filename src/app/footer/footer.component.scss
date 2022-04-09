@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.footer{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer > span{
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.mat-toolbar{
+  background: #fff;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  padding: 0;
+}
