@@ -10,12 +10,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `npm install`, to install all necessary dependencies
 
 ## Quick Summary
-Netlify Forms is a form handling feature that receives HTML form submissions automatically. For study purposes, in this form I will cover how to use it with Angular reactive forms and how to deploy the finished application on Netlify's hosting platform .
-I also used the "ngx-translate" library, to provide options for other languages. for application
+Netlify Forms is a form handling feature that receives HTML form submissions automatically. For study purposes, in this form I will cover how to use it with Angular reactive forms .
+I also used the "ngx-translate" library, to provide options for other languages. for application.
+
+*The next step is to create the backend to handle the form data, I will do it soon :)*
 
 ## Note
 This form was created for study and learning purposes.
 ## See the form running
-https://formulario-de-feedback.netlify.app
+Form: https://formulario-de-feedback.netlify.app
 ## Contact
 Linkedin: https://www.linkedin.com/in/wallaceanterio/
